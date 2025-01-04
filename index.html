@@ -33,12 +33,49 @@
             color: #ff4500;
             margin-top: 20px;
         }
+        .carousel {
+            position: relative;
+            width: 80%;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
         footer {
             margin-top: 50px;
-            padding: 10px;
+            padding: 20px;
             background-color: #ffebcd;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
             font-size: 0.9em;
+        }
+        .contact {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #333;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -49,9 +86,45 @@
     </header>
     <main>
         <p class="highlight">Athisya Kestra (Jaagrt Jwala Maiya)</p>
+        <div class="carousel">
+            <img src="image1.jpg" alt="Temple Image 1" class="active">
+            <img src="image2.jpg" alt="Temple Image 2">
+            <img src="image3.jpg" alt="Temple Image 3">
+            <div class="carousel-buttons">
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
+            </div>
+        </div>
     </main>
     <footer>
+        <div class="contact">
+            Joshi Niketan, No 16 4th 'A' Cross Manjunatha Layout,<br>
+            R.T. Nagar Bangalore Bhilwara 560032<br>
+            Email: <a href="mailto:southtoday2001@gmail.com">southtoday2001@gmail.com</a>
+        </div>
         © 2025 Shri Sanjeevani Jwalamalini Mandir. All rights reserved.
     </footer>
+    <script>
+        const images = document.querySelectorAll('.carousel img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+    </script>
 </body>
 </html>
