@@ -35,7 +35,8 @@
         }
         .carousel {
             position: relative;
-            width: 80%;
+            width: 60%;
+            height: 400px;
             margin: 30px auto;
             overflow: hidden;
             border-radius: 8px;
@@ -43,6 +44,8 @@
         }
         .carousel img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: none;
         }
         .carousel img.active {
@@ -63,6 +66,17 @@
             padding: 10px;
             cursor: pointer;
             border-radius: 50%;
+        }
+        .map {
+            margin: 30px auto;
+            text-align: center;
+        }
+        .map a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 1.1em;
         }
         footer {
             margin-top: 50px;
@@ -87,14 +101,17 @@
     <main>
         <p class="highlight">Athisya Kestra (Jaagrt Jwala Maiya)</p>
         <div class="carousel">
-            <img src="img-1.jpeg" alt="Temple Image 1" class="active">
-            <img src="img-2.jpeg" alt="Temple Image 2">
-            <img src="img-3.jpeg" alt="Temple Image 3">
-            <img src="img-4.jpeg" alt="Temple Image 4">
+            <img src="img-1.jpg" alt="Temple Image 1" class="active">
+            <img src="img-2.jpg" alt="Temple Image 2">
+            <img src="img-3.jpg" alt="Temple Image 3">
             <div class="carousel-buttons">
                 <button id="prev">&#10094;</button>
                 <button id="next">&#10095;</button>
             </div>
+        </div>
+        <div class="map">
+            <p>Find us on Google Maps:</p>
+            <a href="https://g.co/kgs/HsBZ6b" target="_blank">Shri Sanjeevani Jwalamalini Mandir Location</a>
         </div>
     </main>
     <footer>
